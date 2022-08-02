@@ -4,18 +4,22 @@
   "description": "Convert Toggl CSV to a Jira-compatible format",
   "main": "src/main.js",
   "scripts": {
+    "build": "tsc",
     "test": "jest"
   },
   "bin": "bin/toggl2jira",
   "author": "Nikolai Kim <hello@nikolai.kim>",
   "license": "BSD-2-Clause",
   "devDependencies": {
+    "@types/jest": "^28.1.6",
     "eslint": "^8.21.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.4",
     "eslint-plugin-promise": "^6.0.0",
-    "jest": "^28.1.3"
+    "jest": "^28.1.3",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
     "lodash": "^4.17.21"

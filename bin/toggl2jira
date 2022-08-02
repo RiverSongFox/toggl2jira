@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-const { main } = require('../src/main.js')
+const { main } = require('../dist/main')
 main(process.argv[2])

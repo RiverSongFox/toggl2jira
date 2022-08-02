@@ -1,5 +1,5 @@
 const fs = require('fs')
-const { readCSV, main, parseToggl, appendFilenameSuffix, toDateTime, formatDuration, diffInSeconds, formatWorklog } = require('./main')
+import { readCSV, main, parseToggl, appendFilenameSuffix, toDateTime, formatDuration, diffInSeconds, formatWorklog } from './main'
 
 test('reads csv files', async () => {
   expect(readCSV('./test/toggl.csv')).toEqual([{

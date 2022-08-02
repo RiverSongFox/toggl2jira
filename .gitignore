@@ -4,5 +4,8 @@ node_modules/
 # IDE
 .vscode/
 
+# Build
+dist/
+
 # Tests
 test/toggl-jira.csv
