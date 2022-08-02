@@ -2,7 +2,7 @@
   "name": "toggl2jira",
   "version": "0.0.1",
   "description": "Convert Toggl CSV to a Jira-compatible format",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "jest"
   },
