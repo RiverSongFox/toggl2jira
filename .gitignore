@@ -1,0 +1,8 @@
+# Packages
+node_modules/
+
+# IDE
+.vscode/
+
+# Tests
+test/toggl-jira.csv

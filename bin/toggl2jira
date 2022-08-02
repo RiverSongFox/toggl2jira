@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+const { main } = require('../main.js')
+main(process.argv[2])
