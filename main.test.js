@@ -43,9 +43,22 @@ test('formats duration', () => {
 })
 
 test('parses toggl entries', () => {
-  const data = readCSV('./test/toggl.csv')
-
-  expect(parseToggl(data)).toEqual([{
+  expect(parseToggl([{
+    amountUsd: '123.45',
+    billable: 'Yes',
+    client: 'ACME',
+    description: 'JIRA-1234 Automate Toggl to Jira Conversion',
+    duration: '01:23:45',
+    email: 'john.doe@example.com',
+    endDate: '2022-08-02',
+    endTime: '18:23:45',
+    project: 'Foo',
+    startDate: '2022-08-02',
+    startTime: '17:00:00',
+    tags: '',
+    task: '',
+    user: 'John Doe'
+  }])).toEqual([{
     issueKey: 'JIRA-1234',
     dateStarted: '2022-08-02 17:00:00',
     timeSpent: '1h 24m'

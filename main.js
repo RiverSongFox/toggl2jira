@@ -1,12 +1,18 @@
 const _ = require('lodash')
 const fs = require('fs')
-const Papa = require('papaparse')
 
 function readCSV (file) {
-  const data = fs.readFileSync(file, 'utf-8').trim()
-  const json = Papa.parse(data, {
-    header: true
-  })?.data
+  const [header, ...data] = fs.readFileSync(file, 'utf-8').trim().split(/[\r\n]+/)
+  const keys = header.split(',').map(_.camelCase)
+
+  const json = data.map(line => {
+    const fields = line.split(',')
+
+    return fields.reduce((acc, field, index) => {
+      acc[keys[index]] = field
+      return acc
+    }, {})
+  })
 
   return json.map(object => _.mapKeys(object, (_value, key) => _.camelCase(key)))
 }
