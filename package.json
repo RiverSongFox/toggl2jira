@@ -8,6 +8,9 @@
     "test": "jest",
     "semantic-release": "semantic-release"
   },
+  "release": {
+    "branches": ["main"]
+  },
   "bin": "bin/toggl2jira",
   "author": "Nikolai Kim <hello@nikolai.kim>",
   "license": "BSD-2-Clause",
