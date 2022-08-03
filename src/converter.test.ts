@@ -14,6 +14,16 @@ test('parses toggl csv records', () => {
   })
 })
 
+test('skips invalid toggl csv records', () => {
+  expect(toggl.parseTogglEntry({
+    description: 'Lorem Ipsum',
+    startDate: '2020-01-01',
+    startTime: '00:00',
+    endDate: '2020-01-01',
+    endTime: '12:34',
+  })).toEqual(null)
+})
+
 test('converts toggl entries to worklog entries', () => {
   expect(toggl.convertTogglEntryToWorklog({
     issueKey: 'ABC-123',

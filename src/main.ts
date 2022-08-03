@@ -1,13 +1,16 @@
 import { readFileSync, writeFileSync } from 'fs'
-import { convertTogglEntryToWorklog, parseTogglEntry, stringifyWorklogEntry } from "./converter"
+import { convertTogglEntryToWorklog, parseTogglEntry, stringifyWorklogEntry, TogglEntry } from "./converter"
 import { parse, stringify } from "./csv"
 import { appendFilenameSuffix } from './path'
 
 export function main(file: string) {
   const togglCSV = readFileSync(file, 'utf-8')
 
-  const worklogs = parse(togglCSV)
+  const filteredTogglEntries = parse(togglCSV)
     .map(parseTogglEntry)
+    .filter(Boolean) as TogglEntry[]
+
+  const worklogs = filteredTogglEntries
     .map(convertTogglEntryToWorklog)
     .map(stringifyWorklogEntry)
 

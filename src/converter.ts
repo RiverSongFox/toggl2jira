@@ -13,8 +13,13 @@ export type WorklogEntry = {
   timeSpent: Duration,
 }
 
-export function parseTogglEntry(record: CSVRecord): TogglEntry {
-  const [issueKey] = record.description.split(/\s/)
+export function parseTogglEntry(record: CSVRecord): TogglEntry | null {
+  const {groups} = /^(?<issueKey>[^-]+-\d+)/.exec(record.description) ?? {}
+  const issueKey = groups ? groups.issueKey : undefined
+
+  if (!issueKey) {
+    return null
+  }
 
   return {
     issueKey,
