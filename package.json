@@ -9,9 +9,14 @@
     "semantic-release": "semantic-release"
   },
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
   },
-  "files": ["dist/"],
+  "files": [
+    "dist/",
+    "bin/"
+  ],
   "bin": "bin/toggl2jira",
   "author": "Nikolai Kim <hello@nikolai.kim>",
   "license": "BSD-2-Clause",
