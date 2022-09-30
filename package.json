@@ -11,6 +11,7 @@
   "release": {
     "branches": ["main"]
   },
+  "files": ["dist/"],
   "bin": "bin/toggl2jira",
   "author": "Nikolai Kim <hello@nikolai.kim>",
   "license": "BSD-2-Clause",
