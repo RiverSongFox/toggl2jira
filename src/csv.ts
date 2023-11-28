@@ -8,7 +8,9 @@ export function parse(string: string): CSVDocument {
   const keys: string[] = header.split(',').map(_.camelCase);
 
   const json = data.map((line: string) => {
-    const fields = line.split(',');
+    const fields = line
+      .split(',')
+      .map(value => value.replace(/^"|"$/g, ''))
 
     return fields.reduce((acc: CSVRecord, field: string, index: number) => {
       acc[keys[index]] = field;
